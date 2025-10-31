@@ -1,0 +1,15 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Declare dependencies your targets link PUBLIC to
+find_dependency(OpenGL)
+find_dependency(GLEW)
+
+# Load exported targets (Sparkle::Sparkle)
+include("${CMAKE_CURRENT_LIST_DIR}/SparkleTargets.cmake")
+
+### USAGE
+# To link against Sparkle, simply do :
+# find_package(Sparkle REQUIRED)
+# target_link_libraries(MyApp PRIVATE Sparkle::Sparkle)
